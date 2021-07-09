@@ -6,9 +6,21 @@
 //
 
 #include <stdio.h>
+#include <CoreFoundation/CoreFoundation.h>
+
+void stringTest(CFStringRef myString) {
+  Boolean equal = CFEqual(myString, CFSTR("Kalamazoo"));
+  if (equal) {
+    printf("Strings are equal\n");
+  }
+  else {
+    printf("Strings are not equal\n");
+  }
+}
 
 int main(int argc, const char * argv[]) {
-  // insert code here...
-  printf("Hello, World!\n");
+
+  stringTest(CFSTR("Kalamazoo"));
+  
   return 0;
 }
